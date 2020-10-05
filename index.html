@@ -22,12 +22,24 @@
   const hamburgerMenu = document.getElementsByClassName("nav__hamburger-menu")[0];
   const topLine = document.getElementsByClassName("top")[0];
   const bottomLine = document.getElementsByClassName("bottom")[0];
-  var transformTopLine = "scale3d(1,1,1) translate3d(0, 9px, 0)";
-  var transformBottomLine = "scale3d(1,1,1) translate3d(0, -9px, 0)";
+  const hamburgerMenuState = {
+    "open": true,
+  };
+  var transformTopLineOpen = "scale3d(1,1,1) translate3d(0, 9px, 0)";
+  var transformBottomLineOpen = "scale3d(1,1,1) translate3d(0, -9px, 0)";
+  var transformTopLineClosed = "scale3d(1,1,1) translate3d(0, 0, 0)";
+  var transformBottomLineClosed = "scale3d(1,1,1) translate3d(0, 0, 0)";
 
   hamburgerMenu.addEventListener('click', () => {
-    topLine.style.transform = transformTopLine;
-    bottomLine.style.transform = transformBottomLine;
+    if (hamburgerMenuState.open) {
+      topLine.style.transform = transformTopLineClosed;
+      bottomLine.style.transform = transformBottomLineClosed;
+    } else {
+      topLine.style.transform = transformTopLineOpen;
+      bottomLine.style.transform = transformBottomLineOpen;
+    }
+    hamburgerMenuState.open = !hamburgerMenuState.open;
   });
+
 </script>
 </html>
