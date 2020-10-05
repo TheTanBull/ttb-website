@@ -3,9 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>TheTanBull Media</title>
+  <link href="./main.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-  
+  <nav class="nav">
+    <div class="nav__container">
+      <span class="nav__logo">TTB</span>
+      <div class="nav__hamburger-menu">
+        <div class="nav__hamburger-menu-line top"></div>
+        <div class="nav__hamburger-menu-line center"></div>
+        <div class="nav__hamburger-menu-line bottom"></div>
+      </div>
+    </div>
+  </nav>
 </body>
+<script>
+  const hamburgerMenu = document.getElementsByClassName("nav__hamburger-menu")[0];
+  const topLine = document.getElementsByClassName("top")[0];
+  const bottomLine = document.getElementsByClassName("bottom")[0];
+  var transformTopLine = "scale3d(1,1,1) translate3d(0, 9px, 0)";
+  var transformBottomLine = "scale3d(1,1,1) translate3d(0, -9px, 0)";
+
+  hamburgerMenu.addEventListener('click', () => {
+    topLine.style.transform = transformTopLine;
+    bottomLine.style.transform = transformBottomLine;
+  });
+</script>
 </html>

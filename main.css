@@ -1,1 +1,50 @@
 /* Main Style Sheet */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #574efe;
+  color: #eee;
+  font-family: "Brown", sans-serif;
+}
+
+.nav {
+  box-sizing: border-box;
+  display: block;
+  height: 130px;
+  width: 100vw;
+  padding: 40px 0px;
+}
+
+.nav__container {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px 30px;
+  height: 50px;
+  width: 100%;
+}
+
+.nav__logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.nav__hamburger-menu {
+  display: flex;
+  flex-direction: column;
+  transition: transform 350ms ease,-webkit-transform 350ms ease;
+}
+
+.nav__hamburger-menu-line {
+  background-color: #fff;
+  height: 2px;
+  width: 26px;
+  margin: 3.5px 0px;
+  transform:  scale3d(1,1,1) translate3d(0, 0, 0);
+  transition: transform 350ms ease,-webkit-transform 350ms ease;
+}
