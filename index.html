@@ -17,8 +17,10 @@
       </div>
     </div>
   </nav>
+  <div id="overlay"></div>
 </body>
 <script>
+  const menuOverlay = document.getElementById("overlay");
   const hamburgerMenu = document.getElementsByClassName("nav__hamburger-menu")[0];
   const topLine = document.getElementsByClassName("top")[0];
   const bottomLine = document.getElementsByClassName("bottom")[0];
@@ -34,9 +36,13 @@
     if (hamburgerMenuState.open) {
       topLine.style.transform = transformTopLineClosed;
       bottomLine.style.transform = transformBottomLineClosed;
+      menuOverlay.style.display = "none";
     } else {
       topLine.style.transform = transformTopLineOpen;
       bottomLine.style.transform = transformBottomLineOpen;
+      menuOverlay.style.display = "block";
+      menuOverlay.style.height = "200vh";
+      menuOverlay.style.width = "200vw";
     }
     hamburgerMenuState.open = !hamburgerMenuState.open;
   });
